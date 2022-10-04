@@ -15,6 +15,13 @@ public class RanTab {
             this.ranArray[i] = tempval;
         }
     }
+    private int[] getRanArray(){
+        return this.ranArray;
+    }
+
+    private void setRanArray(int[] newArray){
+        this.ranArray = newArray;
+    }
 
     public int getOcc(int n){
         //for given n returns how many time it occurs in the array
@@ -83,12 +90,18 @@ public class RanTab {
 
     public boolean Distro(int i){
         //returns true if sum of values from 0 to i-1 is equal to sum of values from index i to n-1 else false
-    }
-
-    public static void main(String[] args) {
-        RanTab test = new RanTab(3,6);
-
-
+        int toI = 0;
+        int afterI = 0;
+        for(int x=0;x<i-1;x++){
+            toI += ranArray[x];
+        }
+        for(int y=i;y<this.ranArray.length;y++){
+            afterI += ranArray[y];
+        }
+        if (toI == afterI){
+            return true;
+        }
+        else{return false;}
     }
 
     //leveraged from past hw
@@ -126,4 +139,18 @@ public class RanTab {
         }
         return array;
     }
+
+    public static void main(String[] args) {
+        RanTab test = new RanTab(3,6);
+        System.out.println("The array: [");
+        for (int i =0; i<test.getRanArray().length;i++){
+            if(i == test.getRanArray().length-1){
+                System.out.printf("%d ]\n",test.getRanArray()[i]);
+            }
+            else{System.out.printf("%d, ",test.getRanArray()[i]);}
+        }
+
+    }
+
+    
 }
