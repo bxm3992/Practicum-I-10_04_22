@@ -27,23 +27,40 @@ public class RanTab {
         return count;
     }
 
-    public void printUniqueValus(){
+    public void printUniqueValues(){
         //prints all unqiue values
         int printArrayIndex = 0;
         int[] temp_array = this.ranArray;
         int[] sortedArray = selectionSort(temp_array);
-        int[] printArray = new int[temp_array.length]
+        int[] printArray = new int[temp_array.length];
         //sorted array now has all values in order
         for (int i =0; i<sortedArray.length;i++){
             if(i+1 >= sortedArray.length){
-                printArray[printArrayIndex] = sortedArray[i];
-                printArrayIndex +=1;
+                //if on last value
+                if(sortedArray[i] != printArray[printArrayIndex]){
+                    //check if value before is same else add
+                    printArray[printArrayIndex] = sortedArray[i];
+                    printArrayIndex +=1;
+                }
             }
             else{
+                //not at end of list
                 int val1 = sortedArray[i];
                 int val2 = sortedArray[i];
+                if(val1 != val2){
+                    //if value1 is unique add, remeber sorted
+                    printArray[printArrayIndex] = val1;
+                    printArrayIndex +=1;
+                }
             }
             
+        }
+        System.out.println("Unique Values in the array:");
+        for (int i =0; i<printArray.length;i++){
+            if(i == printArray.length-1){
+                System.out.printf("%d \n",printArray[i]);
+            }
+            else{System.out.printf("%d, ",printArray[i]);}
         }
     }
 
