@@ -67,18 +67,9 @@ public static void main(String[] args) {
         else{System.out.printf("%d, ",temp[i]);}
     }
     System.out.printf("Array 1 is greater than Array 2: ");
-    System.out.printf(goodComp ? "true" : "false");
+    System.out.printf(badComp ? "true" : "false");
     System.out.printf("\n");
 }
 
         
-}
-
-
-
-
-
-
-
-
 }
