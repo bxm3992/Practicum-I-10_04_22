@@ -64,10 +64,16 @@ public class RanTab {
         }
         System.out.println("Unique Values in the array:");
         for (int i =0; i<printArray.length;i++){
-            if(i == printArray.length-1){
-                System.out.printf("%d \n",printArray[i]);
+            if(i>0 && (printArray[i] == 0)){ 
+                System.out.printf("\n");
+                break;
             }
-            else{System.out.printf("%d, ",printArray[i]);}
+            else{
+                if(i == printArray.length-1){
+                    System.out.printf("%d \n",printArray[i]);
+                }
+                else{System.out.printf("%d, ",printArray[i]);}
+            }
         }
     }
 
@@ -142,14 +148,66 @@ public class RanTab {
 
     public static void main(String[] args) {
         RanTab test = new RanTab(3,6);
-        System.out.println("The array: [");
+        System.out.print("The array: [ ");
         for (int i =0; i<test.getRanArray().length;i++){
             if(i == test.getRanArray().length-1){
                 System.out.printf("%d ]\n",test.getRanArray()[i]);
             }
             else{System.out.printf("%d, ",test.getRanArray()[i]);}
         }
+        int[] occ =  {1,2,2,2};
+        int[] uniq =  {1,2,3,4,4,4};
+        int[] oddequaleven =  {2,2,1,3};
+        int[] divideisum =  {1,1,1,1,1,1};
+        int[] temp = occ;
+        System.out.print("The new array: [ ");
+        for (int i =0; i<temp.length;i++){
+            if(i == temp.length-1){
+                System.out.printf("%d ]\n",temp[i]);
+            }
+            else{System.out.printf("%d, ",temp[i]);}
+        }
+        test.setRanArray(occ);
+        int numocc = test.getOcc(2);
+        System.out.printf("The number %d occurs %d times.\n",2,numocc);
 
+        temp = uniq;
+        System.out.print("The new array: [ ");
+        for (int i =0; i<temp.length;i++){
+            if(i == temp.length-1){
+                System.out.printf("%d ]\n",temp[i]);
+            }
+            else{System.out.printf("%d, ",temp[i]);}
+        }
+        test.setRanArray(uniq);
+        test.printUniqueValues();
+
+        temp = oddequaleven;
+        System.out.print("The new array: [ ");
+        for (int i =0; i<temp.length;i++){
+            if(i == temp.length-1){
+                System.out.printf("%d ]\n",temp[i]);
+            }
+            else{System.out.printf("%d, ",temp[i]);}
+        }
+        test.setRanArray(oddequaleven);
+        System.out.printf("The sum of odd and even values is equal: ");
+        System.out.printf(test.OddEven() ? "true" : "false");
+        System.out.printf("\n");
+
+
+        temp = divideisum;
+        System.out.print("The new array: [ ");
+        for (int i =0; i<temp.length;i++){
+            if(i == temp.length-1){
+                System.out.printf("%d ]\n",temp[i]);
+            }
+            else{System.out.printf("%d, ",temp[i]);}
+        }
+        test.setRanArray(divideisum);
+        System.out.printf("The sum of values from 1 to 3 and 4 to 6 are equal: ");
+        System.out.printf(test.Distro(4) ? "true" : "false");
+        System.out.printf("\n");
     }
 
     

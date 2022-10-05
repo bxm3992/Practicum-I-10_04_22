@@ -30,7 +30,48 @@ public static void main(String[] args) {
     boolean goodCompRec = test.CompareArraysRecursive(largest, smallest);
     boolean badCompRec = test.CompareArraysRecursive(smallest, largest);
 
+    int[] temp = largest;
+    System.out.print("Array 1: [ ");
+    for (int i =0; i<temp.length;i++){
+        if(i == temp.length-1){
+            System.out.printf("%d ]\n",temp[i]);
+        }
+        else{System.out.printf("%d, ",temp[i]);}
+    }
+    temp = smallest;
+    System.out.print("Array 2: [ ");
+    for (int i =0; i<temp.length;i++){
+        if(i == temp.length-1){
+            System.out.printf("%d ]\n",temp[i]);
+        }
+        else{System.out.printf("%d, ",temp[i]);}
+    }
+    System.out.printf("Array 1 is greater than Array 2: ");
+    System.out.printf(goodComp ? "true" : "false");
+    System.out.printf("\n");
 
+    temp = smallest;
+    System.out.print("Array 1: [ ");
+    for (int i =0; i<temp.length;i++){
+        if(i == temp.length-1){
+            System.out.printf("%d ]\n",temp[i]);
+        }
+        else{System.out.printf("%d, ",temp[i]);}
+    }
+    temp = largest;
+    System.out.print("Array 2: [ ");
+    for (int i =0; i<temp.length;i++){
+        if(i == temp.length-1){
+            System.out.printf("%d ]\n",temp[i]);
+        }
+        else{System.out.printf("%d, ",temp[i]);}
+    }
+    System.out.printf("Array 1 is greater than Array 2: ");
+    System.out.printf(goodComp ? "true" : "false");
+    System.out.printf("\n");
+}
+
+        
 }
 
 
