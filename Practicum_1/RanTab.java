@@ -206,7 +206,7 @@ public class RanTab {
         }
         test.setRanArray(divideisum);
         System.out.printf("The sum of values from 1 to 3 and 4 to 6 are equal: ");
-        System.out.printf(test.Distro(4) ? "true" : "false");
+        System.out.printf(test.Distro(3) ? "true" : "false");
         System.out.printf("\n");
     }
 
