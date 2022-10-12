@@ -98,7 +98,8 @@ public class RanTab {
         //returns true if sum of values from 0 to i-1 is equal to sum of values from index i to n-1 else false
         int toI = 0;
         int afterI = 0;
-        for(int x=0;x<i-1;x++){
+        int x=0;
+        for(x =0; x<i-1;x++){
             toI += ranArray[x];
         }
         for(int y=i;y<this.ranArray.length;y++){
@@ -206,7 +207,7 @@ public class RanTab {
         }
         test.setRanArray(divideisum);
         System.out.printf("The sum of values from 1 to 3 and 4 to 6 are equal: ");
-        System.out.printf(test.Distro(3) ? "true" : "false");
+        System.out.printf(test.Distro(4) ? "true" : "false");
         System.out.printf("\n");
     }
 
